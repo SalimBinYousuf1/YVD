@@ -544,3 +544,68 @@ export const getAllStudents = async () => {
     return [];
   }
 };
+// Get all announcements
+export const getAllAnnouncements = async () => {
+  try {
+    const res = await fetch(`${API_URL}/api/announcements`, {
+      headers: {
+        'Authorization': `Bearer ${getAuthToken()}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!res.ok) throw new Error('Failed to fetch announcements');
+    return await res.json();
+  } catch (error) {
+    console.error('Error fetching announcements:', error);
+    return [];
+  }
+};
+
+// Create announcement
+export const createAnnouncement = async (data) => {
+  try {
+    const res = await fetch(`${API_URL}/api/announcements`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${getAuthToken()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    return await res.json();
+  } catch (error) {
+    console.error('Error creating announcement:', error);
+  }
+};
+
+// Update announcement
+export const updateAnnouncement = async (id, data) => {
+  try {
+    const res = await fetch(`${API_URL}/api/announcements/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${getAuthToken()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    return await res.json();
+  } catch (error) {
+    console.error('Error updating announcement:', error);
+  }
+};
+
+// Delete announcement
+export const deleteAnnouncement = async (id) => {
+  try {
+    const res = await fetch(`${API_URL}/api/announcements/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${getAuthToken()}`,
+      },
+    });
+    return await res.json();
+  } catch (error) {
+    console.error('Error deleting announcement:', error);
+  }
+};
