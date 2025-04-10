@@ -511,3 +511,36 @@ export const updateResult = async (id, updatedData) => {
     throw error;
   }
 };
+// Get all exams
+export const getAllExams = async () => {
+  try {
+    const response = await fetch(`${API_URL}/api/exams`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getAuthToken()}`
+      }
+    });
+    if (!response.ok) throw new Error('Failed to fetch exams');
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching exams:', error);
+    return [];
+  }
+};
+
+// Get all students
+export const getAllStudents = async () => {
+  try {
+    const response = await fetch(`${API_URL}/api/students`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getAuthToken()}`
+      }
+    });
+    if (!response.ok) throw new Error('Failed to fetch students');
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching students:', error);
+    return [];
+  }
+};
