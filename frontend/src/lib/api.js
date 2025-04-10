@@ -404,3 +404,56 @@ export const getStats = async () => {
     };
   }
 };
+// GET all results
+export const getAllResults = async () => {
+  try {
+    const response = await fetch(`${API_URL}/api/results`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getAuthToken()}`
+      }
+    });
+    if (!response.ok) throw new Error('Failed to fetch results');
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching results:', error);
+    return [];
+  }
+};
+
+// DELETE result by ID
+export const deleteResult = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/api/results/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getAuthToken()}`
+      }
+    });
+    if (!response.ok) throw new Error('Failed to delete result');
+    return await response.json();
+  } catch (error) {
+    console.error('Error deleting result:', error);
+    throw error;
+  }
+};
+
+// GET result by studentId and examId
+export const getResultsByStudentAndExam = async (studentId, examId) => {
+  try {
+    const response = await fetch(`${API_URL}/api/results/student/${studentId}/exam/${examId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getAuthToken()}`
+      }
+    });
+    if (!response.ok) throw new Error('Failed to fetch student exam result');
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching result:', error);
+    return null;
+  }
+};
