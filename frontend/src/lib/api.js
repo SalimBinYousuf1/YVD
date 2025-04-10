@@ -457,3 +457,57 @@ export const getResultsByStudentAndExam = async (studentId, examId) => {
     return null;
   }
 };
+// Get all subjects
+export const getAllSubjects = async () => {
+  try {
+    const response = await fetch(`${API_URL}/api/subjects`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getAuthToken()}`
+      }
+    });
+    if (!response.ok) throw new Error('Failed to fetch subjects');
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching subjects:', error);
+    return [];
+  }
+};
+
+// Create a result
+export const createResult = async (resultData) => {
+  try {
+    const response = await fetch(`${API_URL}/api/results`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getAuthToken()}`
+      },
+      body: JSON.stringify(resultData)
+    });
+    if (!response.ok) throw new Error('Failed to create result');
+    return await response.json();
+  } catch (error) {
+    console.error('Error creating result:', error);
+    throw error;
+  }
+};
+
+// Update a result
+export const updateResult = async (id, updatedData) => {
+  try {
+    const response = await fetch(`${API_URL}/api/results/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getAuthToken()}`
+      },
+      body: JSON.stringify(updatedData)
+    });
+    if (!response.ok) throw new Error('Failed to update result');
+    return await response.json();
+  } catch (error) {
+    console.error('Error updating result:', error);
+    throw error;
+  }
+};
