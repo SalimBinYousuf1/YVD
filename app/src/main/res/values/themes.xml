@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.QuranApp" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/sage_primary</item>
+        <item name="colorPrimaryVariant">@color/sage_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/dusty_rose</item>
+        <item name="colorSecondaryVariant">@color/blush_pink</item>
+        <item name="colorOnSecondary">@color/text_primary</item>
+        
+        <item name="android:colorBackground">@color/warm_ivory</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        
+        <item name="colorSurface">@color/surface_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <item name="android:statusBarColor">@color/warm_ivory</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/warm_ivory</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
+    <style name="Theme.QuranApp" parent="Base.Theme.QuranApp" />
+</resources>

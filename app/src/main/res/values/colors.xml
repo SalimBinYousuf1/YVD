@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fluffy Soft Palette -->
+    <color name="soft_cream">#FFF8F0</color>
+    <color name="warm_ivory">#FFFAF5</color>
+    <color name="cloud_white">#F7F5F2</color>
+    <color name="soft_peach">#FFE8D6</color>
+    
+    <!-- Primary Colors - Soft Sage & Dusty Rose -->
+    <color name="sage_primary">#B8C5B4</color>
+    <color name="sage_light">#D4E0D1</color>
+    <color name="sage_dark">#8FA88B</color>
+    <color name="dusty_rose">#E6B8B7</color>
+    <color name="blush_pink">#F5D5D4</color>
+    
+    <!-- Accent Colors - Soft Lavender & Gold -->
+    <color name="soft_lavender">#C8BFE7</color>
+    <color name="lavender_light">#E5DFF7</color>
+    <color name="warm_gold">#D4AF37</color>
+    <color name="soft_gold">#F4E4C1</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#3D3D3D</color>
+    <color name="text_secondary">#7A7A7A</color>
+    <color name="text_tertiary">#A8A8A8</color>
+    <color name="arabic_text">#2C2C2C</color>
+    
+    <!-- Surface Colors -->
+    <color name="surface_elevated">#FFFFFF</color>
+    <color name="surface_card">#FFFCF9</color>
+    <color name="surface_overlay">#33000000</color>
+    
+    <!-- Status Colors -->
+    <color name="success_soft">#B8D8BE</color>
+    <color name="error_soft">#E8B4B8</color>
+    
+    <!-- Shadows & Borders -->
+    <color name="shadow_soft">#1A000000</color>
+    <color name="border_light">#E8E4DF</color>
+    
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+</resources>
