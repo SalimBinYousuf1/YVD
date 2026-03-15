@@ -124,7 +124,7 @@ This script will:
 
 #### Run All Unit Tests
 ```bash
-./gradlew testDebugUnitTest
+./gradlew test
 ```
 
 #### Run Specific Test Class
@@ -140,19 +140,19 @@ This script will:
 
 #### Run All Instrumented Tests
 ```bash
-./gradlew connectedDebugAndroidTest
+./gradlew connectedAndroidTest
 ```
 
 **Note:** Requires a running emulator or connected device.
 
 #### Run Specific Instrumented Test
 ```bash
-./gradlew connectedDebugAndroidTest --tests "*QuranAppUITest"
+./gradlew connectedAndroidTest --tests "*QuranAppUITest"
 ```
 
 #### Run Lint Checks
 ```bash
-./gradlew lintDebug
+./gradlew lint
 ```
 
 ### Using Android Studio
@@ -184,7 +184,7 @@ This script will:
 ### Generate Coverage Report
 
 ```bash
-./gradlew testDebugUnitTest jacocoTestReport
+./gradlew test jacocoTestReport
 ```
 
 View report: `app/build/reports/jacoco/jacocoTestReport/html/index.html`

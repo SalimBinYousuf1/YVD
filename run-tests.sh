@@ -45,7 +45,7 @@ echo ""
 
 echo "Step 2: Running Lint Checks"
 echo "---------------------------"
-if ./gradlew lintDebug; then
+if ./gradlew lint; then
     print_success "Lint checks passed"
 else
     print_error "Lint checks failed"
@@ -55,7 +55,7 @@ echo ""
 
 echo "Step 3: Running Unit Tests"
 echo "-------------------------"
-if ./gradlew testDebugUnitTest; then
+if ./gradlew test; then
     print_success "Unit tests passed"
 else
     print_error "Unit tests failed"
@@ -65,7 +65,7 @@ echo ""
 
 echo "Step 4: Generating Test Coverage Report"
 echo "--------------------------------------"
-if ./gradlew testDebugUnitTest jacocoTestReport 2>/dev/null || true; then
+if ./gradlew test jacocoTestReport 2>/dev/null || true; then
     print_success "Coverage report generated"
 else
     print_info "Coverage report skipped (jacocoTestReport not configured)"
@@ -86,7 +86,7 @@ echo "Step 6: Checking for Instrumented Test Environment"
 echo "-------------------------------------------------"
 if adb devices | grep -q "device$"; then
     print_info "Device/Emulator detected, running instrumented tests..."
-    if ./gradlew connectedDebugAndroidTest; then
+    if ./gradlew connectedAndroidTest; then
         print_success "Instrumented tests passed"
     else
         print_error "Instrumented tests failed"
@@ -105,7 +105,7 @@ echo ""
 
 print_info "Test Reports Location:"
 echo "  - Unit Tests: app/build/reports/tests/testDebugUnitTest/index.html"
-echo "  - Lint Report: app/build/reports/lint-results-debug.html"
+echo "  - Lint Report: app/build/reports/lint-results.html"
 echo "  - Instrumented Tests: app/build/reports/androidTests/connected/index.html"
 echo ""
 

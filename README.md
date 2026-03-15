@@ -89,13 +89,16 @@ cd quran-app
 
 ```bash
 # Run unit tests
-./gradlew testDebugUnitTest
+./gradlew test
 
 # Run instrumented tests
-./gradlew connectedDebugAndroidTest
+./gradlew connectedAndroidTest
 
 # Run all tests
-./gradlew test
+./gradlew test connectedAndroidTest
+
+# Run lint
+./gradlew lint
 ```
 
 ## 🤖 GitHub Actions CI/CD
